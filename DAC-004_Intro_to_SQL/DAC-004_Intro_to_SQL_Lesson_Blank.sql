@@ -142,12 +142,20 @@
 -- WHERE clause: LIKE clause
 -- The placement of the wildcard, %, affects what is getting filtered out.
 
+SELECT *
+FROM person.person
+WHERE firstname LIKE 'J%';
+
 -- From the person table, select all the firstname starting with a 'J'
 -- Works very similar to excel find function
 
 -- Find J
 
 -- Only works for string!
+
+SELECT *
+FROM humanresources.employee
+WHERE birthdate LIKE '1969-01-29%';
 
 -- But what if you know the number of letters in the firstname?
 
@@ -163,7 +171,13 @@ WHERE firstname LIKE 'J___';
 -- not tallying
 
 -- We have two varying results, we can use things like UPPER() and LOWER() clause
+SELECT *
+FROM person.person
+WHERE UPPER(firstname) LIKE 'A%';
 
+SELECT *
+FROM person.person
+WHERE LOWER(firstname) LIKE '%a%';
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
